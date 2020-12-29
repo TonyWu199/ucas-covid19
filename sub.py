@@ -41,7 +41,8 @@ if os.environ.get('GITHUB_RUN_ID', None):
     sender_email = os.environ['SENDER_EMAIL'] # 发送通知打卡通知邮件的邮箱
     sender_email_passwd = os.environ['SENDER_EMAIL_PASSWD'] # 发送通知打卡通知邮件的邮箱密码
     receiver_email = os.environ['RECEIVER_EMAIL'] # 接收打卡通知邮件的邮箱
-
+print(user)
+print(passwd)
 
 def login(s: requests.Session, username, password):
     # r = s.get(
@@ -184,7 +185,7 @@ def report(username, password):
     s.headers.update(header)
 
     print(datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%Y-%m-%d %H:%M:%S %Z"))
-    for i in range(randint(10, 11), 0, -1):
+    for i in range(randint(1, 2), 0, -1):
         print("\r等待{}秒后填报".format(i), end='')
         sleep(1)
 
@@ -194,4 +195,6 @@ def report(username, password):
 
 
 if __name__ == "__main__":
+    # user = 'wuziqiang19@mails.ucas.ac.cn'
+    # passwd = 'Wzq332lai!!!'
     report(username=user, password=passwd)
