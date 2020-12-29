@@ -47,8 +47,6 @@ def login(s: requests.Session, username, password):
     #     "https://app.ucas.ac.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.ucas.ac.cn%2Fsite%2FapplicationSquare%2Findex%3Fsid%3D2")
     # print(r.text)
     
-    username = 'wuziqiang19@mails.ucas.ac.cn'
-    password = 'Wzq332lai!!!'
     payload = {
         "username": username,
         "password": password
@@ -196,6 +194,4 @@ def report(username, password):
 
 
 if __name__ == "__main__":
-    # user = 'wuziqiang19@mails.ucas.ac.cn'
-    # passwd = 'Wzq332lai!!!'
     report(username=user, password=passwd)
