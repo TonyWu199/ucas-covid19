@@ -41,8 +41,6 @@ if os.environ.get('GITHUB_RUN_ID', None):
     sender_email = os.environ['SENDER_EMAIL'] # 发送通知打卡通知邮件的邮箱
     sender_email_passwd = os.environ['SENDER_EMAIL_PASSWD'] # 发送通知打卡通知邮件的邮箱密码
     receiver_email = os.environ['RECEIVER_EMAIL'] # 接收打卡通知邮件的邮箱
-print(user)
-print(passwd)
 
 def login(s: requests.Session, username, password):
     # r = s.get(
@@ -56,6 +54,8 @@ def login(s: requests.Session, username, password):
 
     # print(r.text)
     if r.json().get('m') != "操作成功":
+        print(username)
+        print(password)
         print(r.text)
         print("登录失败")
         exit(1)
