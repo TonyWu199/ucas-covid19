@@ -54,6 +54,7 @@ def login(s: requests.Session, username, password):
 
     # print(r.text)
     if r.json().get('m') != "操作成功":
+        print('凉了凉了')
         print(username)
         print(password)
         print(r.text)
