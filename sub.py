@@ -35,7 +35,6 @@ if os.environ.get('GITHUB_RUN_ID', None):
     user = os.environ['SEP_USER_NAME']  # sep账号
     passwd = os.environ['SEP_PASSWD']  # sep密码
     api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
-    print(user, passwd)
     smtp_port = os.environ['SMTP_PORT'] # 邮件服务器端口，默认为qq smtp服务器端口
     smtp_server = os.environ['SMTP_SERVER'] # 邮件服务器，默认为qq smtp服务器
     sender_email = os.environ['SENDER_EMAIL'] # 发送通知打卡通知邮件的邮箱
@@ -47,6 +46,7 @@ def login(s: requests.Session, username, password):
     #     "https://app.ucas.ac.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.ucas.ac.cn%2Fsite%2FapplicationSquare%2Findex%3Fsid%3D2")
     # print(r.text)
     
+    print(user, passwd)
     payload = {
         "username": username,
         "password": password
