@@ -12,6 +12,9 @@ from random import randint
 from datetime import datetime
 from email.utils import formataddr
 from email.mime.text import MIMEText
+import urllib3
+
+urllib3.disable_warnings()
 
 # 开启debug将会输出打卡填报的数据，关闭debug只会输出打卡成功或者失败，如果使用github actions，请务必设置该选项为False
 debug = False
